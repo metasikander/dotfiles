@@ -1,4 +1,4 @@
-" hybrid line numbering, that changes to static line numbering in insert mode
+" hybrid line numbering, that changes to static line numbering in insert mode: https://jeffkreeftmeijer.com/vim-number/
 set number relativenumber
 
 augroup numbertoggle
