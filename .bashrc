@@ -17,3 +17,4 @@ export PATH
 
 # User specific aliases and functions
 alias today='date +"%F"'
+alias df='df -x"squashfs"'
