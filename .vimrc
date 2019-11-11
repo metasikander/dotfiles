@@ -6,3 +6,8 @@ augroup numbertoggle
   autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
   autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
 augroup END
+
+
+" ignore case when searching
+set ignorecase
+set smartcase
