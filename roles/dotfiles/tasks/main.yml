@@ -1,0 +1,39 @@
+---
+# tasks file for dotfiles
+
+- name: setup vimrc
+  copy:
+    src: vimrc
+    dest: "/home/{{ user }}/.vimrc"
+
+- name: setup bashrc
+  blockinfile:
+    block: "{{ lookup('file', 'bashrc') }}"
+    dest: "/home/{{ user }}/.bashrc"
+    backup: true
+
+- name: setup ssh-keys
+  copy:
+    src: "{{ item }}"
+    dest: "/home/{{ user }}/.ssh/"
+    owner: "{{ user }}"
+    mode: 0600
+    backup: true
+  with_fileglob:
+    - "ssh/id_rsa*"
+
+- name: setup ssh-config
+  lineinfile:
+    line: "{{ lookup('file', 'ssh/config') }}"
+    dest: "/home/{{ user }}/.ssh/config"
+    owner: "{{ user }}"
+    mode: 0600
+    backup: true
+
+- name: setup ssh-config
+  lineinfile:
+    line: "{{ lookup('file', 'ssh/authorized_keys') }}"
+    dest: "/home/{{ user }}/.ssh/authorized_keys"
+    owner: "{{ user }}"
+    mode: 0600
+    backup: true

@@ -1,0 +1,4 @@
+---
+# vars file for dotfiles
+
+user: "{{ ansible_env['USERNAME'] }}"
