@@ -3,3 +3,4 @@
 backup av snap-configs
 flytt tinc-oppsett til rolle
 endre setup.sh til å kjøre ansible-jobben
+autoinstaller nyeste release fra github, uten å laste ned filen

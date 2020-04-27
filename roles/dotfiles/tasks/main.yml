@@ -37,3 +37,38 @@
     owner: "{{ user }}"
     mode: 0600
     backup: true
+
+# ==========================
+# MANAGE PACKAGES
+#===========================
+
+- name: Remove apt-packages
+  become: true
+  apt:
+    name: "{{ item }}"
+    state: absent
+  loop: "{{ apt_absent }}"
+
+- name: Install apt-packages
+  become: true
+  apt:
+    name: "{{ item }}"
+    state: latest
+  loop: "{{ apt_present }}"
+
+- name: Install pip-packages
+  pip:
+    name: "{{ item }}"
+    extra_args: --user --upgrade
+  loop: "{{ pip_packages }}"
+
+- name: Install snap-packages
+  snap:
+    name: "{{ item }}"
+  loop: "{{ snap_packages }}"
+
+- name: Install snap-packages with classic
+  snap:
+    name: "{{ item }}"
+    classic: true
+  loop: "{{ snap_packages_classic }}"

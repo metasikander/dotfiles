@@ -2,3 +2,36 @@
 # vars file for dotfiles
 
 user: "{{ ansible_env['USER'] }}"
+
+apt_absent:
+  - firefox
+  - python2
+apt_present:
+  - git
+  - python3
+  - python-is-python3
+  - python3-pip
+  - transmission-gtk
+  - ghostwriter
+apt_internet:
+  - https://prerelease.keybase.io/keybase_amd64.deb
+
+pip_packages:
+  - pip
+  - ansible
+  - docker
+  - Dice-Roller
+
+snap_packages:
+  - firefox
+  - htop
+  - ora
+  - spotify
+  - telegram-desktop
+  - termius-app
+  - vlc
+snap_packages_classic:
+  - pycharm-community
+
+appimage_packages:
+  - https://faw-desktop.s3.amazonaws.com/focusatwill%201.6.0.AppImage
