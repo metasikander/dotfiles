@@ -1,7 +1,0 @@
----
-- name: Playbook for setting up dotfiles
-  hosts: localhost
-  become: false
-
-  roles:
-    - dotfiles

@@ -1,3 +1,0 @@
-alias today='date +"%F"'
-alias df='df -x"squashfs"'
-alias rsync='rsync --progress'

@@ -1,6 +1,0 @@
-/usr/share/X11/xkb/symbols/pc = endre tastaturoppsett (bytt pgup/pgdn med home/end)
-/etc/sysconfig/network-scripts/* = endre dns til 1.1.1.1 som standard på alle. backup av alle. Passord i vault.
-backup av snap-configs
-flytt tinc-oppsett til rolle
-endre setup.sh til å kjøre ansible-jobben
-autoinstaller nyeste release fra github, uten å laste ned filen
