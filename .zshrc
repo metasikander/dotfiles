@@ -110,3 +110,9 @@ source $ZSH/oh-my-zsh.sh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# Alias
+alias ll="lsd -lh"
+alias la="lsd -lha"
+alias l="lsd"
+alias vim="nvim"
