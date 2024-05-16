@@ -3,6 +3,7 @@ sudo apt install -y build-essential
 
 # NIX setup
 curl -L https://nixos.org/nix/install | sh  
+nix-channel --update
 nix-env -iA nixpkgs.zsh  
 nix-env -iA nixpkgs.zsh-powerlevel10k  
 nix-env -iA nixpkgs.oh-my-zsh  
@@ -13,3 +14,7 @@ nix-env -iA nixpkgs.tmux
 
 # Search for nix packages 
 nix-env -qaP | grep <package>
+
+# Update packages
+nix-channel --update  
+nix-env -u '*'
