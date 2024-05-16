@@ -1,6 +1,15 @@
 # Packages
-lsd: https://github.com/lsd-rs/lsd/releases
-zsh:
-oh-my-zsh:
-powerlevel10k:
-neovim: https://github.com/neovim/neovim/releases
+sudo apt install -y build-essential
+
+# NIX setup
+curl -L https://nixos.org/nix/install | sh  
+nix-env -iA nixpkgs.zsh  
+nix-env -iA nixpkgs.zsh-powerlevel10k  
+nix-env -iA nixpkgs.oh-my-zsh  
+nix-env -iA nixpkgs.chezmoi  
+nix-env -iA nixpkgs.neovim  
+nix-env -iA nixpkgs.lsd  
+nix-env -iA nixpkgs.tmux  
+
+# Search for nix packages 
+nix-env -qaP | grep <package>
