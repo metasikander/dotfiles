@@ -1,0 +1,8 @@
+Host *
+    ControlMaster auto
+    ControlPath ~/.ssh/sessions/%r@%h
+    ControlPersist 1h
+    ServerAliveInterval 60
+    ServerAliveCountMax 3
+
+Include ~/.ssh/config/*
