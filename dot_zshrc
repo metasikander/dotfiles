@@ -92,7 +92,7 @@ plugins=(git)
 export TMUX_SHELL=$(which zsh)
 export SHELL="$TMUX_SHELL"
 
-ZSH_TMUX_AUTOSTART=true
+#ZSH_TMUX_AUTOSTART=true
 
 source $ZSH/oh-my-zsh.sh
 
