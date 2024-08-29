@@ -1,11 +1,15 @@
+# Ensure TMUX uses the correct zsh binary path
+export TMUX_SHELL=$(which zsh)
+export SHELL="$TMUX_SHELL"
+
 # Start tmux automatically if not already inside a tmux session
 # Skips sourcing the rest of the .zshrc file if it's not in the tmux session
-#if command -v tmux &> /dev/null; then
-#    if [ -z "$TMUX" ] && [ -z "$SSH_CONNECTION" ]; then
-#        tmux attach-session -t default || tmux new-session -s default 
-#        reset
-#    fi
-#fi
+if command -v tmux &> /dev/null; then
+    if [ -z "$TMUX" ] && [ -z "$SSH_CONNECTION" ]; then
+        tmux attach-session -t default || tmux new-session -s default 
+        reset
+    fi
+fi
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
@@ -87,12 +91,6 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git)
-
-# Ensure TMUX uses the correct zsh binary path
-export TMUX_SHELL=$(which zsh)
-export SHELL="$TMUX_SHELL"
-
-ZSH_TMUX_AUTOSTART=true
 
 source $ZSH/oh-my-zsh.sh
 
