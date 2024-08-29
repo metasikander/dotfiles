@@ -2,7 +2,7 @@
 # Skips sourcing the rest of the .zshrc file if it's not in the tmux session
 if command -v tmux &> /dev/null; then
     if [ -z "$TMUX" ] && [ -z "$SSH_CONNECTION" ]; then
-        tmux attach-session -t default || tmux new-session -s default
+        tmux attach-session -t default || tmux new-session -s default && exec zsh
         reset
     fi
 fi
